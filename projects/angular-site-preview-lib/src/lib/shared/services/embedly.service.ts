@@ -37,10 +37,11 @@ export class EmbedlyService {
 
   /**
    * Create site model from API data.
+   * @param requestedUrl
    * @param data
    * @returns {SiteModel}
    */
-  getSiteModelByData(data): SiteModel {
-    return new SiteModel(data.url, data.title, data.description, data.thumbnail_url);
+  getSiteModelByData(requestedUrl, data): SiteModel {
+    return new SiteModel(requestedUrl, data.url, data.title, data.description, data.thumbnail_url);
   }
 }
