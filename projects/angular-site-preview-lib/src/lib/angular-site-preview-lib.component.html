@@ -1,11 +1,15 @@
 <h1>Site Preview</h1>
 
 <div class="site-preview">
+  Preview Theme <select [(ngModel)]="selectedTheme">
+    <option *ngFor="let theme of themes" [ngValue]="theme">{{theme.name}}</option>
+  </select>
+
   <p>
     <textarea [ngModel]='inputText' (ngModelChange)="onChange($event)" placeholder="What's on your mind?" rows="15" cols="80"></textarea>
   </p>
 
-  <div class="sites-container">
+  <div class="sites-container {{selectedTheme.class}}">
     <div *ngFor="let site of sitePreviewService.sites" class="site">
       <img class="site-thumbnail" src="{{site.image}}">
       <h2 class="site-title">

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularSitePreviewLibService } from './angular-site-preview-lib.service';
 import { EmbedlyService } from './shared/services/embedly.service';
+import { THEMES } from './shared/constants/theme.constants';
 import { Subject } from 'rxjs';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -15,6 +16,8 @@ export class AngularSitePreviewLibComponent {
 
   public inputText: string;
   public inputChanged: Subject<string> = new Subject<string>();
+  public themes: object[] = THEMES;
+  public selectedTheme: object = this.themes[0];
 
   constructor(public sitePreviewService: AngularSitePreviewLibService) {
     // Don't request text processing too often.
