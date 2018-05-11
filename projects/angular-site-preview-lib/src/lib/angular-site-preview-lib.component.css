@@ -1,0 +1,32 @@
+.site-preview textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #75c1ff;
+}
+
+.site {
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px auto;
+  max-width: 500px;
+}
+
+.site-thumbnail {
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+
+.site-title {
+  font-size: 1.3em;
+  margin: 20px 10px;
+}
+
+.site-description {
+  text-align: justify;
+  margin: 15px 10px;
+}
