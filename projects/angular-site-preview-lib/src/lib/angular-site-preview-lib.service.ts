@@ -41,7 +41,8 @@ export class AngularSitePreviewLibService {
       this.getSiteDataByUrl(url)
         .subscribe(
           resp => {
-            this.addSite(this.getSiteModelByData(resp));
+            const site = this.embedlyService.getSiteModelByData(url, resp);
+            this.addSite(site);
           },
           error => console.error(error) // TODO: Implement error handling.
         );
@@ -60,19 +61,15 @@ export class AngularSitePreviewLibService {
   }
 
   private isFetched(url) {
-    return !!this.sites.find(site => site.url === url);
+    return !!this.sites.find(site => site.requestedUrl === url);
   }
 
   getSiteDataByUrl(url: string) {
     return this.embedlyService.getSiteData(url);
   }
 
-  getSiteModelByData(data: object): SiteModel {
-    return this.embedlyService.getSiteModelByData(data);
-  }
-
   private addSite(site: SiteModel) {
-    this.fetchedUrls.push(site.url);
+    this.fetchedUrls.push(site.requestedUrl);
     this.sites.push(site);
   }
 }
