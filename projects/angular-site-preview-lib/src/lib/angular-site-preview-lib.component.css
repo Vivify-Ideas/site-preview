@@ -42,6 +42,9 @@
 }
 
 .sites-container.theme-compact img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   float: left;
   max-width: 230px;
   margin: 10px;
